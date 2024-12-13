@@ -1,10 +1,12 @@
 // tailwind.config.js
 module.exports = {
-  content: [
-    "./src/**/*.{js,jsx,ts,tsx}", // Pastikan ini menunjuk ke semua file di src
-  ],
+  content: ['./index.html', './src/**/*.{js,jsx}'],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        customBlue: '#2B7FBB',
+      },
+    },
   },
   plugins: [],
 };
