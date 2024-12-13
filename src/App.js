@@ -1,25 +1,11 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import LoginPage from "./login_page/pages/LoginPage";
+import Register from "./register_page/pages/RegisterPage";
+import PilihanMasuk from "./pilihanMasuk_page/pages/PilihanMasuk";
+import LoginOwner from "./loginownerkos_page/pages/LoginOwner";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  return <LoginOwner />;
 }
 
 export default App;
