@@ -1,7 +1,15 @@
 import React, { useEffect, useState, useRef } from "react";
 import BerandaImage from "../assets/Beranda.svg";
 import kotaImage from "../assets/kota.png"; 
+import kosreguler from "../assets/kostreguler.svg"; 
+import kosekslusif from "../assets/kosekslusif.svg"; 
+import kontrakkan from "../assets/kontrakkan.svg"; 
+import kotaImage2 from "../assets/jakarta.svg"; 
+import kotaImage3 from "../assets/malang.svg"; 
+import kotaImage4 from "../assets/surabaya.svg"; 
+import kotaImage5 from "../assets/kota1.svg"; 
 import Navbar from "../component/navbar";
+import logo from "../assets/logokos.png"; 
 import { Home, MapPin, Wallet, Shield } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
@@ -81,22 +89,36 @@ const HomePage = () => {
             {/* Circles Container */}
             <div className="flex space-x-16 gap-[10%] mb-8">
               <div className="text-center">
-                <div className="w-[147px] h-[146px] rounded-full bg-white shadow-lg flex items-center justify-center mb-2 mx-auto">
-                  <Home className="w-8 h-8 text-blue-500" />
-                </div>
-                <p className="text-white font-medium">Kost Tersedia</p>
+              <div className="w-[147px] h-[146px] rounded-full bg-white shadow-lg flex items-center justify-center mb-2 mx-auto">
+  <img
+    src={kosreguler} 
+    alt="Home Icon"
+    className="w-[147px] h-[146px] object-cover rounded-full"
+  />
+</div>
+
+
+                <p className="text-white font-medium">Kost Reguler</p>
               </div>
               <div className="text-center">
                 <div className="w-[147px] h-[146px] rounded-full bg-white shadow-lg flex items-center justify-center mb-2 mx-auto">
-                  <MapPin className="w-8 h-8 text-blue-500" />
+                <img
+    src={kosekslusif} 
+    alt="Home Icon"
+    className="w-[147px] h-[146px] object-cover rounded-full"
+  />
                 </div>
-                <p className="text-white font-medium">Lokasi Strategis</p>
+                <p className="text-white font-medium">Kost Ekslusif</p>
               </div>
               <div className="text-center">
                 <div className="w-[147px] h-[146px] rounded-full bg-white shadow-lg flex items-center justify-center mb-2 mx-auto">
-                  <Wallet className="w-8 h-8 text-blue-500" />
+                <img
+    src={kontrakkan} 
+    alt="Home Icon"
+    className="w-[147px] h-[146px] object-cover rounded-full"
+  />
                 </div>
-                <p className="text-white font-medium">Harga Terjangkau</p>
+                <p className="text-white font-medium">Kontrakkan</p>
               </div>
             </div>
             
@@ -136,6 +158,19 @@ const HomePage = () => {
       }}
     >
       <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+        <h3 className="text-white text-xl font-bold">Kost Jogja</h3>
+      </div>
+    </div>
+
+    <div 
+      className="w-[213px] h-[257px] relative rounded-lg overflow-hidden shadow-lg"
+      style={{
+        backgroundImage: `url(${kotaImage2})`, // Use correct URL for placeholder images
+        backgroundSize: 'cover',
+        backgroundPosition: 'center'
+      }}
+    >
+      <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
         <h3 className="text-white text-xl font-bold">Kost Jakarta</h3>
       </div>
     </div>
@@ -143,20 +178,20 @@ const HomePage = () => {
     <div 
       className="w-[213px] h-[257px] relative rounded-lg overflow-hidden shadow-lg"
       style={{
-        backgroundImage: `url(${kotaImage})`, // Use correct URL for placeholder images
+        backgroundImage: `url(${kotaImage3})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center'
       }}
     >
       <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
-        <h3 className="text-white text-xl font-bold">Kost Bandung</h3>
+        <h3 className="text-white text-xl font-bold">Kost Malang</h3>
       </div>
     </div>
 
     <div 
       className="w-[213px] h-[257px] relative rounded-lg overflow-hidden shadow-lg"
       style={{
-        backgroundImage: `url(${kotaImage})`,
+        backgroundImage: `url(${kotaImage4})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center'
       }}
@@ -164,31 +199,18 @@ const HomePage = () => {
       <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
         <h3 className="text-white text-xl font-bold">Kost Surabaya</h3>
       </div>
-    </div>
-
-    <div 
-      className="w-[213px] h-[257px] relative rounded-lg overflow-hidden shadow-lg"
-      style={{
-        backgroundImage: `url(${kotaImage})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center'
-      }}
-    >
-      <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
-        <h3 className="text-white text-xl font-bold">Kost Yogyakarta</h3>
-      </div>
     </div>  
 
     <div 
       className="w-[213px] h-[257px] relative rounded-lg overflow-hidden shadow-lg"
       style={{
-        backgroundImage: `url(${kotaImage})`,
+        backgroundImage: `url(${kotaImage5})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center'
       }}
     >
       <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
-        <h3 className="text-white text-xl font-bold">Kost Semarang</h3>
+        <h3 className="text-white text-xl font-bold">Kost Bandung</h3>
       </div>  
     </div>
     
@@ -197,9 +219,8 @@ const HomePage = () => {
 
       </div>  
       <div className="flex items-center space-x-4 pl-[4%] mt-4">
-        <div className="bg-black p-2 rounded-full shadow-md">
-          <img src="../assets/Beranda.svg" alt="Icon" className="w-6 h-6" />
-        </div>
+       
+          <img src={logo} alt="Icon" className="w-10 h-10" />
         <span className="text-gray-800 text-xl font-bold">Jelajah Kost</span>
       </div>
       <span className="text-gray-800 text-xl font-normal pl-[7.5%]">Temukan Kost Idealmu dengan Sekali Jelajah!</span>

@@ -1,12 +1,17 @@
 import React from 'react';
 import { AiOutlineLogin } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
+import logo from "../assets/logokos.png"; 
+
 
 const Navbar = ({ showNavbar }) => {
       const navigate = useNavigate(); 
 
       const handlePusatClick = () => {
         navigate("/pusat-bantuan"); 
+      };
+      const handleLoginClick = () => {
+        navigate("/pilihan"); 
       };
     
   return (
@@ -16,9 +21,9 @@ const Navbar = ({ showNavbar }) => {
       }`}
     >
       <div className="flex items-center space-x-4">
-        <div className="bg-black p-2 rounded-full shadow-md">
-          <img src="../assets/Beranda.svg" alt="Icon" className="w-6 h-6" />
-        </div>
+        
+          <img src={logo} alt="Icon" className="w-10 h-10" />
+       
         <span className="text-gray-800 text-xl font-semibold">Jelajah Kost</span>
       </div>
 
@@ -30,7 +35,8 @@ const Navbar = ({ showNavbar }) => {
         </button>
         <div className="bg-white px-4 py-2 rounded-lg flex items-center space-x-2 cursor-pointer shadow-md">
           <AiOutlineLogin className="text-gray-600" size={20} />
-          <span className="text-gray-600">Login</span>
+          <button className= "text-gray-600"onClick={handleLoginClick}>Login</button>
+
         </div>
       </div>
     </div>

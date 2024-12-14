@@ -50,7 +50,7 @@ const Login = () => {
           <div className="bg-white shadow-md rounded-[50px] w-11/12 max-w-sm p-8 h-[650px] flex flex-col justify-between">
             <div>
               <h1 className="text-2xl font-bold text-center text-gray-700 mb-6">
-                Masuk sebagai Pemilik Kost
+                Masuk sebagai Pencari Kost
               </h1>
 
               {errorMessage && (

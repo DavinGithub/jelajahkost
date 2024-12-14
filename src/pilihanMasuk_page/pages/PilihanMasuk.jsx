@@ -1,15 +1,19 @@
 import React from 'react';
+import { useNavigate } from "react-router-dom";
 import Header from '../component/Header';
 import ButtonChoice from '../component/ButtonChoice';
 import KostImage from '../assets/Mask group.svg';
 import HouseIcon from '../assets/Vector.svg';
 
+
 const PilihanMasuk = () => {
+  const navigate = useNavigate();
   const handlePencariKostClick = () => {
-    console.log('Pencari Kost clicked');
+    navigate("/"); 
   };
 
   const handlePemilikKostClick = () => {
+    navigate("/")
     console.log('Pemilik Kost clicked');
   };
 
