@@ -4,6 +4,7 @@ import LoginPage from './login_page/pages/LoginPage';
 import HomePage from './home_page/pages/HomePage'; 
 import PusatBantuan from './pusatbantuan_page/pages/PusatBantuan.jsx';
 import PencarianKost from './pencariankost/pages/PencarianKost'; 
+import PilihanMasuk from './pilihanMasuk_page/pages/PilihanMasuk.jsx';
 
 const App = () => {
   return (
@@ -11,6 +12,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<LoginPage />} />
         <Route path="/home" element={<HomePage />} />
+        <Route path ="/pilihan" element={<PilihanMasuk />} />
         <Route path="/pusat-bantuan" element={<PusatBantuan />} />
         <Route path="/pencarian-kost" element={<PencarianKost />} />
       </Routes>

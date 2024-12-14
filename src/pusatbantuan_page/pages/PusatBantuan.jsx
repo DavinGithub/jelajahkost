@@ -3,6 +3,9 @@ import React from 'react';
 import Header from '../component/Header';
 import Card from '../component/Card';
 import Footer from '../component/Footer';
+import pusatbantuan1 from "../assets/unsplash_2FPjlAyMQTA.svg"; 
+import pusatbantuan2 from "../assets/unsplash_mfB1B1s4sMc.svg"; 
+
 
 const PusatBantuan = () => {
   return (
@@ -24,8 +27,9 @@ const PusatBantuan = () => {
 
         {/* Cards Section */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-9 max-w-5xl mx-auto">
-          <Card title="Pencari Kost" image="https://via.placeholder.com/500x300" />
-          <Card title="Pemilik Kost" image="https://via.placeholder.com/500x300" />
+        <Card title="Pencari Kost" image={pusatbantuan1} />
+
+          <Card title="Pemilik Kost" image={pusatbantuan2} />
         </div>
       </main>
       <Footer />
