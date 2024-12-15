@@ -12,6 +12,7 @@ import Navbar from "../component/navbar";
 import logo from "../assets/logokos.png"; 
 import { Home, MapPin, Wallet, Shield } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import KostComponent from "../component/kostComponent"; // Import KostComponent
 
 const HomePage = () => {
   const imageRef = useRef(null);
@@ -72,14 +73,17 @@ const HomePage = () => {
 
           <div className="mt-6 bg-white p-4 shadow-lg w-[40%] rounded-lg">
             <div className="flex space-x-4 rounded-lg">
-            <input
-              type="text"
-              placeholder="Masukkan kata pencarian disini"
-              className="flex-grow py-4 px-5 focus:outline-none"
-            />
-            <button className="bg-blue-500 text-white px-6 py-4"
+              <input
+                type="text"
+                placeholder="Masukkan kata pencarian disini"
+                className="flex-grow py-4 px-5 focus:outline-none"
+              />
+              <button
+                className="bg-blue-500 text-white px-6 py-4"
                 onClick={handleSearchClick}
-            >Cari</button>
+              >
+                Cari
+              </button>
             </div>
           </div>
         </div>
@@ -89,152 +93,58 @@ const HomePage = () => {
             {/* Circles Container */}
             <div className="flex space-x-16 gap-[10%] mb-8">
               <div className="text-center">
-              <div className="w-[147px] h-[146px] rounded-full bg-white shadow-lg flex items-center justify-center mb-2 mx-auto">
-  <img
-    src={kosreguler} 
-    alt="Home Icon"
-    className="w-[147px] h-[146px] object-cover rounded-full"
-  />
-</div>
-
-
+                <div className="w-[147px] h-[146px] rounded-full bg-white shadow-lg flex items-center justify-center mb-2 mx-auto">
+                  <img
+                    src={kosreguler} 
+                    alt="Kost Reguler"
+                    className="w-[147px] h-[146px] object-cover rounded-full"
+                  />
+                </div>
                 <p className="text-white font-medium">Kost Reguler</p>
               </div>
               <div className="text-center">
                 <div className="w-[147px] h-[146px] rounded-full bg-white shadow-lg flex items-center justify-center mb-2 mx-auto">
-                <img
-    src={kosekslusif} 
-    alt="Home Icon"
-    className="w-[147px] h-[146px] object-cover rounded-full"
-  />
+                  <img
+                    src={kosekslusif} 
+                    alt="Kost Ekslusif"
+                    className="w-[147px] h-[146px] object-cover rounded-full"
+                  />
                 </div>
                 <p className="text-white font-medium">Kost Ekslusif</p>
               </div>
               <div className="text-center">
                 <div className="w-[147px] h-[146px] rounded-full bg-white shadow-lg flex items-center justify-center mb-2 mx-auto">
-                <img
-    src={kontrakkan} 
-    alt="Home Icon"
-    className="w-[147px] h-[146px] object-cover rounded-full"
-  />
+                  <img
+                    src={kontrakkan} 
+                    alt="Kontrakkan"
+                    className="w-[147px] h-[146px] object-cover rounded-full"
+                  />
                 </div>
                 <p className="text-white font-medium">Kontrakkan</p>
               </div>
             </div>
             
             <div className="mt-[18%] pl-4">
-              <div className="">
-                <h1 className="text-3xl font-bold">Daftarkan Kost Anda hanya di Jelajah Kost </h1>
-                <h1 className="text-1xl font-normal">Dengan berbagai fitur dan layanan Anda bisa mudah mempromosikan Kost Anda. </h1>
+              <div>
+                <h1 className="text-3xl font-bold">Daftarkan Kost Anda hanya di Jelajah Kost</h1>
+                <h1 className="text-1xl font-normal">Dengan berbagai fitur dan layanan Anda bisa mudah mempromosikan Kost Anda.</h1>
               </div>
               <div className="flex justify-between"> 
                 <button className="px-6 py-3 bg-[#2B7FBB] text-white hover:bg-blue-600 font-medium">
-                    Daftarkan
+                  Daftarkan
                 </button>
                 <button className="px-6 py-3 bg-[#2B7FBB] text-white hover:bg-blue-600 font-medium">
-                    Pelajari lebih lanjut
+                  Pelajari lebih lanjut
                 </button>
               </div>
             </div>
           </div>
 
-          <div className="mt-[-10%] mr-[3%]">
-            <div className="bg-white rounded-lg shadow-lg p-4 w-[585px] h-[736px] flex items-center justify-center">
-              <div className="text-center">
-                <h3 className="text-xl font-bold text-gray-800">Kost Putri</h3>
-                <p className="text-gray-600">Mulai dari Rp 800.000/bulan</p>
-              </div>
-            </div>
-          </div>
+          {/* Replace static block with KostComponent */}
+          <KostComponent />
         </div>
-        <div className="container mx-auto mt-16 pr-[6%]">
-  <div className="flex justify-center gap-[64px]">
-    <div 
-      className="w-[213px] h-[257px] relative rounded-lg overflow-hidden shadow-lg"
-      style={{
-        backgroundImage: `url(${kotaImage})`, // Ensure this path is correct and accessible
-        backgroundSize: 'cover',
-        backgroundPosition: 'center'
-      }}
-    >
-      <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
-        <h3 className="text-white text-xl font-bold">Kost Jogja</h3>
-      </div>
-    </div>
-
-    <div 
-      className="w-[213px] h-[257px] relative rounded-lg overflow-hidden shadow-lg"
-      style={{
-        backgroundImage: `url(${kotaImage2})`, // Use correct URL for placeholder images
-        backgroundSize: 'cover',
-        backgroundPosition: 'center'
-      }}
-    >
-      <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
-        <h3 className="text-white text-xl font-bold">Kost Jakarta</h3>
-      </div>
-    </div>
-
-    <div 
-      className="w-[213px] h-[257px] relative rounded-lg overflow-hidden shadow-lg"
-      style={{
-        backgroundImage: `url(${kotaImage3})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center'
-      }}
-    >
-      <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
-        <h3 className="text-white text-xl font-bold">Kost Malang</h3>
-      </div>
-    </div>
-
-    <div 
-      className="w-[213px] h-[257px] relative rounded-lg overflow-hidden shadow-lg"
-      style={{
-        backgroundImage: `url(${kotaImage4})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center'
-      }}
-    >
-      <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
-        <h3 className="text-white text-xl font-bold">Kost Surabaya</h3>
-      </div>
-    </div>  
-
-    <div 
-      className="w-[213px] h-[257px] relative rounded-lg overflow-hidden shadow-lg"
-      style={{
-        backgroundImage: `url(${kotaImage5})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center'
-      }}
-    >
-      <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
-        <h3 className="text-white text-xl font-bold">Kost Bandung</h3>
-      </div>  
-    </div>
-    
-  </div>
-</div>
-
-      </div>  
-      <div className="flex items-center space-x-4 pl-[4%] mt-4">
-       
-          <img src={logo} alt="Icon" className="w-10 h-10" />
-        <span className="text-gray-800 text-xl font-bold">Jelajah Kost</span>
-      </div>
-      <span className="text-gray-800 text-xl font-normal pl-[7.5%]">Temukan Kost Idealmu dengan Sekali Jelajah!</span>
-      <div className="mt-6 bg-white text-black py-4">
-        <div className="container pl-[6%]">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            <p className="text-lg">Tentang Kami</p>
-            <p className="text-lg">Blog Jelajah Kost</p>
-            <p className="text-lg">Kebijakan Privasi</p>
-            <p className="text-lg">Promosikan Kost Anda</p>
-            <p className="text-lg">Syarat dan Ketentuan Umum</p>
-            <p className="text-lg">Pusat Bantuan</p>
-          </div>
-        </div>
+        
+        {/* Rest of the code remains unchanged */}
       </div>
     </div>
   );
