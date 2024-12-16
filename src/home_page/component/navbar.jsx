@@ -33,11 +33,7 @@ const Navbar = ({ showNavbar }) => {
         >
             Pusat Bantuan
         </button>
-        <div className="bg-white px-4 py-2 rounded-lg flex items-center space-x-2 cursor-pointer shadow-md">
-          <AiOutlineLogin className="text-gray-600" size={20} />
-          <button className= "text-gray-600"onClick={handleLoginClick}>Login</button>
-
-        </div>
+       
       </div>
     </div>
   );
