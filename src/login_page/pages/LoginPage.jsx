@@ -2,16 +2,19 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom'; // For routing
 import TextField from '../component/TextField';
 import Image from '../assets/loginreact.png';
+import LoadingSpinner from '../component/LoadingSpinner';
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
-  const [errorMessage, setErrorMessage] = useState(''); // For displaying error messages
+  const [errorMessage, setErrorMessage] = useState('');
+  const [loading, setLoading] = useState(false); // New state to manage loading
 
   const navigate = useNavigate(); // To redirect to the homepage after successful login
 
   const handleLogin = async () => {
+    setLoading(true); // Start loading
     try {
       const response = await fetch('https://bpkbautodigital.com/api/auth/login', {
         method: 'POST',
@@ -21,23 +24,28 @@ const Login = () => {
         body: JSON.stringify({
           email,
           password,
-          phone_number: phoneNumber, // Ensure your API expects phone_number
+          phone_number: phoneNumber,
         }),
       });
 
       const data = await response.json();
 
       if (response.ok) {
-        // If the login is successful, redirect to the homepage
-        navigate('/home');
+        // Save token to localStorage
+        localStorage.setItem("access_token", data.access_token);
+        navigate("/home"); // Redirect to home
       } else {
-        // If there's an error (like invalid credentials), show the error message
-        setErrorMessage(data.message || 'Email atau password salah!');
+        setErrorMessage(data.message || 'Email, password, atau nomor handphone salah!');
       }
     } catch (error) {
-      // Handle any errors with the fetch request
-      setErrorMessage('Terjadi kesalahan, coba lagi nanti.');
+      setErrorMessage('Akun tidak ditemukan');
+    } finally {
+      setLoading(false); // Stop loading
     }
+  };
+
+  const handleRegisterClick = () => {
+    navigate("/register"); // Redirect to registration page
   };
 
   return (
@@ -53,9 +61,10 @@ const Login = () => {
                 Masuk sebagai Pencari Kost
               </h1>
 
+              {/* Displaying error message alert */}
               {errorMessage && (
-                <div className="text-red-500 text-center mb-4">
-                  {errorMessage}
+                <div className="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400" role="alert">
+                  <span className="font-medium">Error:</span> {errorMessage}
                 </div>
               )}
 
@@ -80,23 +89,30 @@ const Login = () => {
                 placeholder="Masukan nomor handphone anda"
                 value={phoneNumber}
                 onChange={(e) => setPhoneNumber(e.target.value)}
+                
               />
             </div>
             <div className="text-center text-sm text-gray-600">
               Belum punya akun Jelajah Kost?{' '}
-              <a href="#" className="text-blue-500 hover:underline">
+              <a
+                href="#"
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleRegisterClick();
+                }}
+                className="text-blue-500 hover:underline"
+              >
                 Daftarkan sekarang!
               </a>
               <br />
-              <a href="#" className="text-blue-500 hover:underline">
-                Lupa password?
-              </a>
+             
             </div>
             <button
-              onClick={handleLogin} // Call the handleLogin function when the button is clicked
+              onClick={handleLogin}
               className="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 mt-4"
+              disabled={loading} // Disable the button when loading
             >
-              Masuk
+              {loading ? <LoadingSpinner /> : 'Masuk'} {/* Show loading spinner if loading */}
             </button>
           </div>
         </div>

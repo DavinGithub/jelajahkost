@@ -25,7 +25,7 @@ const TextField = ({ label, type = 'text', placeholder, value, onChange, showTog
             onClick={toggleVisibility}
             className="absolute inset-y-0 right-4 flex items-center text-gray-500 hover:text-gray-700"
           >
-            {inputType === 'password' ? '🙈' : '👁️'}
+            {inputType === 'password' ? '🙈' : '🙉'}
           </button>
         )}
       </div>
