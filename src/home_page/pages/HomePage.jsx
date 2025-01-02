@@ -8,6 +8,7 @@ import kotaImage2 from "../assets/jakarta.svg";
 import kotaImage3 from "../assets/malang.svg"; 
 import kotaImage4 from "../assets/surabaya.svg"; 
 import kotaImage5 from "../assets/kota1.svg"; 
+import Footer from "../component/footer";
 import Navbar from "../component/navbar";
 import logo from "../assets/logokos.png"; 
 import { Home, MapPin, Wallet, Shield } from "lucide-react";
@@ -45,7 +46,7 @@ const HomePage = () => {
   }, []);
 
   const handleSearchClick = () => {
-    navigate("/pencarian-kost"); 
+    navigate("/listkos"); 
   };
 
   const handleCity = () => {
@@ -195,6 +196,7 @@ const HomePage = () => {
 
 
       </div>
+      <Footer />
     </div>
   );
 };

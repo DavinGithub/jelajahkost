@@ -1,7 +1,14 @@
-// TextField.jsx
 import React, { useState } from 'react';
+import { Eye, EyeOff } from 'lucide-react';
 
-const TextField = ({ label, type = 'text', placeholder, value, onChange, showToggleIcon = false }) => {
+const TextField = ({ 
+  label, 
+  type = 'text', 
+  placeholder, 
+  value, 
+  onChange, 
+  showToggleIcon = false 
+}) => {
   const [inputType, setInputType] = useState(type);
 
   const toggleVisibility = () => {
@@ -19,13 +26,18 @@ const TextField = ({ label, type = 'text', placeholder, value, onChange, showTog
           onChange={onChange}
           className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
         />
-        {showToggleIcon && (
+        {showToggleIcon && type === 'password' && (
           <button
             type="button"
             onClick={toggleVisibility}
             className="absolute inset-y-0 right-4 flex items-center text-gray-500 hover:text-gray-700"
+            aria-label={inputType === 'password' ? 'Tampilkan kata sandi' : 'Sembunyikan kata sandi'}
           >
-            {inputType === 'password' ? '🙈' : '🙉'}
+            {inputType === 'password' ? (
+              <EyeOff className="w-5 h-5" />
+            ) : (
+              <Eye className="w-5 h-5" />
+            )}
           </button>
         )}
       </div>

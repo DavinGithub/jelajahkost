@@ -51,7 +51,7 @@ const ListKost = () => {
       }
 
       try {
-        const response = await axios.get("https://bpkbautodigital.com/api/kost", {
+        const response = await axios.get("https://jelajahkost.com/api/kost", {
           headers: { Authorization: `Bearer ${token}` },
         });
         if (response.data.status === "success") {
