@@ -16,7 +16,7 @@ const Login = () => {
   const handleLogin = async () => {
     setLoading(true); // Start loading
     try {
-      const response = await fetch('https://bpkbautodigital.com/api/auth/login', {
+      const response = await fetch('https://jelajahkost.com/api/auth/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

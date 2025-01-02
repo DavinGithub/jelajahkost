@@ -18,7 +18,7 @@ const Register = () => {
     setLoading(true);
     try {
       
-      const response = await fetch('https://bpkbautodigital.com/api/auth/register-user', {
+      const response = await fetch('https://jelajahkost.com/api/auth/register-user', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

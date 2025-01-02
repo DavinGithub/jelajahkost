@@ -20,7 +20,7 @@ const KostComponent = () => {
       }
 
       try {
-        const response = await axios.get("https://bpkbautodigital.com/api/kost", {
+        const response = await axios.get("https://jelajahkost.com/api/kost", {
           headers: { Authorization: `Bearer ${token}` },
         });
         if (response.data.status === "success") {
@@ -58,7 +58,7 @@ const KostComponent = () => {
 
     try {
       const response = await axios.post(
-        "https://bpkbautodigital.com/api/payment/checkout",
+        "https://jelajahkost.com/api/payment/checkout",
         { kost_id: kostId },
         {
           headers: { Authorization: `Bearer ${token}`, "Content-Type": "application/json" },

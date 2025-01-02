@@ -15,7 +15,7 @@ const Detail = () => {
     const fetchDetail = async () => {
       try {
         const response = await axios.get(
-          `https://bpkbautodigital.com/api/kost/detail/${id}`
+          `https://jelajahkost.com/api/kost/detail/${id}`
         );
         setKost(response.data.data);
       } catch (err) {
@@ -54,7 +54,7 @@ const Detail = () => {
 
     try {
       const response = await axios.post(
-        "https://bpkbautodigital.com/api/payment/checkout",
+        "https://jelajahkost.com/api/payment/checkout",
         { kost_id: kostId, check_in: selectedDate }, // Kirim tanggal
         {
           headers: {
